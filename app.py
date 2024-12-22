@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request
 import joblib
 import numpy as np
@@ -5,8 +6,8 @@ import numpy as np
 app = Flask(__name__)
 
 # Load model and scaler
-model = joblib.load('cancer_model.pkl')
-scaler = joblib.load('scaler.pkl')
+model = joblib.load(os.path.join(os.path.dirname(__file__), 'cancer_model.pkl'))
+scaler = joblib.load(os.path.join(os.path.dirname(__file__), 'scaler.pkl'))
 
 @app.route("/", methods=["GET", "POST"])
 def predict():

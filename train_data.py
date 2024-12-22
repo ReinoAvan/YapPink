@@ -5,7 +5,7 @@ import pandas as pd
 import joblib
 
 # Load dataset
-data = pd.read_csv(r"C:\Users\REINO AVANSATRIA\Downloads\Medicio\Medicio\breast-cancer-wisconsin-data_data.csv")
+data = pd.read_csv("breast-cancer-wisconsin-data_data.csv")
 
 # Drop unnecessary columns
 data = data.drop(columns=['Unnamed: 32', 'id'])
